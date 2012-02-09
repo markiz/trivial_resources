@@ -29,7 +29,7 @@ end
 
 ```
 class UsersController < ApplicationController
-  include TrivialResources
+  include TrivialResources::Base
   include TrivialResources::Create
 
   protected
