@@ -1,12 +1,17 @@
 require "active_support/all"
 module TrivialResources
   module Base
+    module ClassMethods
+      def responder
+        Responder
+      end
+    end
+
+    def self.included(base)
+      base.extend ClassMethods
+    end
 
     protected
-
-    def responder
-      Responder
-    end
 
     def resource_class
       @@resource_class ||= self.class.name.sub(/Controller$/, "").
