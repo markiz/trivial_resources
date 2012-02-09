@@ -1,0 +1,5 @@
+require "trivial_resources/actions/index"
+require "trivial_resources/actions/show"
+require "trivial_resources/actions/create"
+require "trivial_resources/actions/update"
+require "trivial_resources/actions/destroy"
