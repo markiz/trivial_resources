@@ -47,7 +47,7 @@ module TrivialResources
 
     def find_resource!
       resource_scope.
-        where(resource_identifier => params[:resource_identifier]).first ||
+        where(resource_identifier => params[resource_identifier]).first ||
         raise(not_found_exception_class)
     end
   end
