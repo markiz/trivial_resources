@@ -42,8 +42,12 @@ module TrivialResources
       instance_variable_set("@#{resource_name.pluralize}", value)
     end
 
-    def resource_identifier
+    def resource_key
       :id
+    end
+
+    def identifier_param
+      params[:id]
     end
 
     def not_found_exception_class
@@ -51,8 +55,7 @@ module TrivialResources
     end
 
     def find_resource!
-      resource_scope.
-        where(resource_identifier => params[resource_identifier]).first ||
+      resource_scope.where(resource_key => identifier_param).first ||
         raise(not_found_exception_class)
     end
   end
