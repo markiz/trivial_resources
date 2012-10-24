@@ -2,7 +2,7 @@ module TrivialResources
   module Show
     def show
       show_find_resource!
-      respond_with show_formatted_resource
+      respond_with show_formatted_resource, :callback => params[:callback]
     end
 
     protected

@@ -2,7 +2,7 @@ module TrivialResources
   module Index
     def index
       index_find_resources
-      respond_with index_formatted_resources
+      respond_with index_formatted_resources, :callback => params[:callback]
     end
 
     protected

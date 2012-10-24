@@ -3,7 +3,7 @@ module TrivialResources
     def update
       update_find_resource!
       resource.update_attributes(params[resource_name])
-      respond_with update_formatted_resource
+      respond_with update_formatted_resource, :callback => params[:callback]
     end
 
     protected

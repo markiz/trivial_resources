@@ -3,7 +3,7 @@ module TrivialResources
     def create
       create_build_resource!
       resource.update_attributes(params[resource_name])
-      respond_with resource
+      respond_with resource, :callback => params[:callback]
     end
 
     protected
