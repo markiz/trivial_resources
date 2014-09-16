@@ -17,7 +17,11 @@ module TrivialResources
     end
 
     def build_scope
-      resource_class.scoped
+      if resource_class.respond_to?(:scoped) # Rails 4.1 deprecation
+        resource_class.scoped
+      else
+        resource_class
+      end
     end
   end
 end
